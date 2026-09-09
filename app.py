@@ -16,7 +16,7 @@ st.write(
 st.subheader("Enter Your Soil Information")
 
 ph = st.number_input(
-    "Soil pH",
+    "Soil pH (0–14)",
     min_value=0.0,
     max_value=14.0,
     value=7.0,
