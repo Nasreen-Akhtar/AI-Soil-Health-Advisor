@@ -32,28 +32,28 @@ organic_matter = st.number_input(
 )
 
 nitrogen = st.number_input(
-    "Nitrogen",
+    "Nitrogen (mg/kg)",
     min_value=0.0,
     value=0.0,
     step=1.0
 )
 
 phosphorus = st.number_input(
-    "Phosphorus",
+    "Phosphorus (mg/kg)",
     min_value=0.0,
     value=0.0,
     step=1.0
 )
 
 potassium = st.number_input(
-    "Potassium",
+    "Potassium (mg/kg)",
     min_value=0.0,
     value=0.0,
     step=1.0
 )
 
 ec = st.number_input(
-    "Electrical Conductivity (EC)",
+    "Electrical Conductivity (EC) (dS/m)",
     min_value=0.0,
     value=0.0,
     step=0.1
