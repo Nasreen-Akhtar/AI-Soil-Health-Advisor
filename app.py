@@ -157,6 +157,14 @@ if st.button("Analyze Soil"):
         ec_advice = "Soil salinity is high. Consider improving drainage and managing salt accumulation before planting."
     
     st.write(f"**EC Recommendation:** {ec_advice}")
+    if organic_matter < 2.0:
+        organic_advice = "Organic matter is low. Consider adding well-decomposed organic material such as compost to improve soil health."
+    elif organic_matter <= 4.0:
+        organic_advice = "Organic matter is in a reasonable range. Maintain it by returning crop residues and using appropriate organic amendments."
+    else:
+        organic_advice = "Organic matter is high. Continue practices that maintain soil organic matter."
+
+    st.write(f"**Organic Matter Recommendation:** {organic_advice}")
 
     st.subheader("🌱 Soil Information")
 
