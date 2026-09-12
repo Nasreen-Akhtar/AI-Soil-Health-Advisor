@@ -97,6 +97,13 @@ if st.button("Analyze Soil"):
     st.subheader("🔬 Soil Analysis")
     st.subheader("🌱 Overall Soil Health Score")
     final_score = round((score / 90) * 100)
+    st.subheader("💡 Overall Assessment")
+    
+st.write(
+    "Your soil is currently in a healthy range based on the entered values. "
+    "Continue balanced nutrient management, maintain organic matter, "
+    "and avoid excessive fertilizer application."
+)
 
     st.metric("Soil Health Score", f"{final_score}/100")
     if final_score >= 80:
@@ -323,10 +330,4 @@ if st.button("Analyze Soil"):
         "Soil analysis completed successfully. "
         "Review the analysis and recommendations above."
     )
-    st.write(
-        "Your soil is currently in a healthy range based on the entered values. "
-        "Continue balanced nutrient management, maintain organic matter, "
-        "and avoid excessive fertilizer application."
-    )
-
     
