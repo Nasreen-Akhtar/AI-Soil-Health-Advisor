@@ -99,6 +99,14 @@ if st.button("Analyze Soil"):
     final_score = round((score / 90) * 100)
     st.metric("Soil Health Score", f"{final_score}/100")
     st.progress(final_score / 100)
+    if final_score >= 80:
+        st.success("🌱 Excellent soil health")
+    elif final_score >= 60:
+        st.info("🌿 Good soil health")
+    elif final_score >= 40:
+        st.warning("⚠️ Soil health needs improvement")
+    else:
+        st.error("🔴 Soil health needs attention")
     
     st.subheader("💡 Overall Assessment")
     
@@ -331,7 +339,7 @@ if st.button("Analyze Soil"):
     st.write(f"**Crop-Specific Recommendation:** {crop_advice}")
     
 
-    st.subheader("🌱 Soil Information")
+    st.subheader("📋 Entered Soil Information")
 
     st.write(f"**pH:** {ph}")
     st.write(f"**Organic Matter:** {organic_matter}%")
