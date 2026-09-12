@@ -80,6 +80,12 @@ if st.button("Analyze Soil"):
 
     st.subheader("🔬 Soil Analysis")
     st.write(f"**pH Analysis:** {ph_result}")
+    if organic_matter < 2.0:
+        organic_result = "Your soil organic matter is low."
+    elif organic_matter <= 4.0:
+        organic_result = "Your soil organic matter is in a reasonable range."
+    else:
+        organic_result = "Your soil has high organic matter."
 
     st.subheader("🌱 Soil Information")
 
