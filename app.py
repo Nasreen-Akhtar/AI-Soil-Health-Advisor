@@ -95,6 +95,8 @@ if st.button("Analyze Soil"):
         ph_result = "Your soil is alkaline."
 
     st.subheader("🔬 Soil Analysis")
+    st.subheader("🌱 Overall Soil Health Score")
+    st.metric("Soil Health Score", f"{score}/90")
     st.write(f"**pH Analysis:** {ph_result}")
     if ph < 6.0:
        st.warning("⚠️ Soil pH is acidic.")
