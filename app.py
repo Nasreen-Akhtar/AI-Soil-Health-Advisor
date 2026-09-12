@@ -123,6 +123,12 @@ if st.button("Analyze Soil"):
         potassium_result = "Your soil potassium level is high."
 
     st.write(f"**Potassium Analysis:** {potassium_result}")
+    if potassium < 100:
+       st.warning("⚠️ Potassium needs attention.")
+    elif potassium <= 200:
+       st.success("🟢 Potassium level is moderate.")
+    else:
+       st.info("🔵 Potassium level is high.")
     if ec < 2.0:
         ec_result = "Your soil has low salinity."
     elif ec <= 4.0:
