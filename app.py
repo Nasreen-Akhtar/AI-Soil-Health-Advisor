@@ -207,97 +207,88 @@ if st.button("Analyze Soil"):
     else:
         ec_result = "Your soil has high salinity."
 
-    st.write(f"**EC Analysis:** {ec_result}")
-    if ec < 2.0:
-       st.success("🟢 Soil salinity is low.")
-    elif ec <= 4.0:
-       st.warning("🟡 Soil salinity needs monitoring.")
+       if crop == "Rice":
+        if soil_texture == "Loamy":
+            crop_result = "Loamy soil is generally suitable for rice cultivation when water and nutrient management are appropriate."
+        elif soil_texture == "Clayey":
+            crop_result = "Clayey soil can support rice cultivation because it can retain water, but proper drainage and nutrient management are important."
+        elif soil_texture == "Sandy":
+            crop_result = "Sandy soil may have limited water-holding capacity for rice. Good irrigation and organic matter management are important."
+        else:
+            crop_result = f"{soil_texture} soil selected for rice. Monitor water retention, drainage, and nutrient availability."
+
+    elif crop == "Wheat":
+        if soil_texture == "Loamy":
+            crop_result = "Loamy soil is generally suitable for wheat because it provides a good balance of drainage, water retention, and nutrient availability."
+        elif soil_texture == "Sandy":
+            crop_result = "Sandy soil may require better water and nutrient management for wheat because of lower water-holding capacity."
+        elif soil_texture == "Clayey":
+            crop_result = "Clayey soil can support wheat, but good drainage and soil structure management are important."
+        else:
+            crop_result = f"{soil_texture} soil selected for wheat. Monitor soil moisture, drainage, and nutrient availability."
+
     else:
-       st.error("🔴 Soil salinity is high.")
-if crop == "Rice":
-    if soil_texture == "Loamy":
-        crop_result = "Loamy soil is generally suitable for rice cultivation when water and nutrient management are appropriate."
-    elif soil_texture == "Clayey":
-        crop_result = "Clayey soil can support rice cultivation because it can retain water, but proper drainage and nutrient management are important."
-    elif soil_texture == "Sandy":
-        crop_result = "Sandy soil may have limited water-holding capacity for rice. Good irrigation and organic matter management are important."
-    else:
-        crop_result = f"{soil_texture} soil selected for rice. Monitor water retention, drainage, and nutrient availability."
+        crop_result = f"{soil_texture} soil selected for {crop}. Consider soil moisture, drainage, organic matter, and nutrient management."
 
-elif crop == "Wheat":
-    if soil_texture == "Loamy":
-        crop_result = "Loamy soil is generally suitable for wheat because it provides a good balance of drainage, water retention, and nutrient availability."
-    elif soil_texture == "Sandy":
-        crop_result = "Sandy soil may require better water and nutrient management for wheat because of lower water-holding capacity."
-    elif soil_texture == "Clayey":
-        crop_result = "Clayey soil can support wheat, but good drainage and soil structure management are important."
-    else:
-        crop_result = f"{soil_texture} soil selected for wheat. Monitor soil moisture, drainage, and nutrient availability."
+    st.write(f"**Crop & Soil Analysis:** {crop_result}")
 
-else:
-    crop_result = f"{soil_texture} soil selected for {crop}. Consider soil moisture, drainage, organic matter, and nutrient management."
+    st.subheader("🌱 Soil Health Recommendations")
 
-st.write(f"**Crop & Soil Analysis:** {crop_result}")
-
-st.subheader("🌱 Soil Health Recommendations")
-if nitrogen < 20:
+    if nitrogen < 20:
         nitrogen_advice = "Consider improving nitrogen availability through appropriate nitrogen management."
-elif nitrogen <= 40:
+    elif nitrogen <= 40:
         nitrogen_advice = "Nitrogen is in a moderate range. Apply nitrogen fertilizer according to crop requirements and avoid excessive application."
-else:
+    else:
         nitrogen_advice = "Nitrogen is high. Avoid unnecessary nitrogen fertilizer application."
 
-st.write(f"**Nitrogen Recommendation:** {nitrogen_advice}")
-if nitrogen < 20:
-       st.warning("⚠️ Nitrogen may need attention.")
-elif nitrogen <= 40:
-       st.success("🟢 Nitrogen management is currently balanced.")
-else:
-       st.info("🔵 Nitrogen is high. Avoid unnecessary fertilizer application.")
-if phosphorus < 15:
+    st.write(f"**Nitrogen Recommendation:** {nitrogen_advice}")
+
+    if nitrogen < 20:
+        st.warning("⚠️ Nitrogen may need attention.")
+    elif nitrogen <= 40:
+        st.success("🟢 Nitrogen management is currently balanced.")
+    else:
+        st.info("🔵 Nitrogen is high. Avoid unnecessary fertilizer application.")
+
+    if phosphorus < 15:
         phosphorus_advice = "Phosphorus is low. Consider appropriate phosphorus management based on crop requirements."
-elif phosphorus <= 30:
+    elif phosphorus <= 30:
         phosphorus_advice = "Phosphorus is in a moderate range. Maintain balanced phosphorus management and avoid unnecessary application."
-else:
+    else:
         phosphorus_advice = "Phosphorus is high. Avoid unnecessary phosphorus fertilizer application."
 
-st.write(f"**Phosphorus Recommendation:** {phosphorus_advice}")
-if phosphorus < 15:
-    phosphorus_advice = "Phosphorus is low. Consider appropriate phosphorus management based on crop requirements."
-elif phosphorus <= 30:
-    phosphorus_advice = "Phosphorus is in a moderate range. Maintain balanced phosphorus management and avoid unnecessary application."
-else:
-    phosphorus_advice = "Phosphorus is high. Avoid unnecessary phosphorus fertilizer application."
+    st.write(f"**Phosphorus Recommendation:** {phosphorus_advice}")
 
-st.write(f"**Phosphorus Recommendation:** {phosphorus_advice}")
-
-if phosphorus < 15:
-    st.warning("⚠️ Phosphorus may need attention.")
-elif phosphorus <= 30:
-    st.success("🟢 Phosphorus management is currently balanced.")
-else:
-    st.info("🔵 Phosphorus is high. Avoid unnecessary fertilizer application.")
-
-if potassium < 100:
-    st.warning("⚠️ Potassium may need attention.")
-elif potassium <= 200:
-    st.success("🟢 Potassium management is currently balanced.")
-else:
-    st.info("🔵 Potassium is high. Avoid unnecessary fertilizer application.")
-  if ec < 2.0:
-    ec_advice = "Soil salinity is currently low. Maintain proper irrigation and drainage to prevent salt accumulation."
-elif ec <= 4.0:
-    ec_advice = "Soil has moderate salinity. Monitor salinity and maintain good irrigation and drainage."
-else:
-    ec_advice = "Soil salinity is high. Consider improving drainage and managing salt accumulation before planting."
-
-st.write(f"**EC Recommendation:** {ec_advice}")
-    if ec < 2.0:
-       st.success("🟢 Salinity management is currently good.")
-    elif ec <= 4.0:
-       st.warning("🟡 Salinity needs monitoring.")
+    if phosphorus < 15:
+        st.warning("⚠️ Phosphorus may need attention.")
+    elif phosphorus <= 30:
+        st.success("🟢 Phosphorus management is currently balanced.")
     else:
-       st.error("🔴 Salinity needs immediate attention.")
+        st.info("🔵 Phosphorus is high. Avoid unnecessary fertilizer application.")
+
+    if potassium < 100:
+        st.warning("⚠️ Potassium may need attention.")
+    elif potassium <= 200:
+        st.success("🟢 Potassium management is currently balanced.")
+    else:
+        st.info("🔵 Potassium is high. Avoid unnecessary fertilizer application.")
+
+    if ec < 2.0:
+        ec_advice = "Soil salinity is currently low. Maintain proper irrigation and drainage to prevent salt accumulation."
+    elif ec <= 4.0:
+        ec_advice = "Soil has moderate salinity. Monitor salinity and maintain good irrigation and drainage."
+    else:
+        ec_advice = "Soil salinity is high. Consider improving drainage and managing salt accumulation before planting."
+
+    st.write(f"**EC Recommendation:** {ec_advice}")
+
+    if ec < 2.0:
+        st.success("🟢 Salinity management is currently good.")
+    elif ec <= 4.0:
+        st.warning("🟡 Salinity needs monitoring.")
+    else:
+        st.error("🔴 Salinity needs immediate attention.")
+
     if organic_matter < 2.0:
         organic_advice = "Organic matter is low. Consider adding well-decomposed organic material such as compost to improve soil health."
     elif organic_matter <= 4.0:
@@ -306,12 +297,14 @@ st.write(f"**EC Recommendation:** {ec_advice}")
         organic_advice = "Organic matter is high. Continue practices that maintain soil organic matter."
 
     st.write(f"**Organic Matter Recommendation:** {organic_advice}")
+
     if organic_matter < 2.0:
-       st.warning("⚠️ Organic matter may need improvement.")
+        st.warning("⚠️ Organic matter may need improvement.")
     elif organic_matter <= 4.0:
-       st.success("🟢 Organic matter management is currently good.")
+        st.success("🟢 Organic matter management is currently good.")
     else:
-       st.info("🔵 Organic matter is high.")
+        st.info("🔵 Organic matter is high.")
+
     if ph < 6.0:
         ph_advice = "Soil is acidic. Consider appropriate soil amendments based on a soil test and crop requirements."
     elif ph <= 7.5:
@@ -320,43 +313,38 @@ st.write(f"**EC Recommendation:** {ec_advice}")
         ph_advice = "Soil is alkaline. Consider appropriate management practices based on a soil test and crop requirements."
 
     st.write(f"**pH Recommendation:** {ph_advice}")
+
     if ph < 6.0:
-       st.warning("⚠️ Soil pH may need correction.")
+        st.warning("⚠️ Soil pH may need correction.")
     elif ph <= 7.5:
-       st.success("🟢 Soil pH management is currently suitable.")
+        st.success("🟢 Soil pH management is currently suitable.")
     else:
-       st.warning("⚠️ Soil pH may need correction.")
+        st.warning("⚠️ Soil pH may need correction.")
+
     if crop == "Rice":
         crop_advice = (
             "For rice, maintain balanced nutrient management, "
             "avoid excessive nitrogen application, and maintain proper water and drainage management."
         )
-
     elif crop == "Wheat":
         crop_advice = (
             "For wheat, maintain balanced nitrogen and phosphorus management, "
             "avoid excessive fertilizer application, and maintain good soil moisture."
         )
-
     elif crop == "Maize":
         crop_advice = (
             "For maize, maintain balanced nitrogen and potassium management, "
             "support good soil moisture, and avoid excessive fertilizer application."
         )
-
     elif crop == "Vegetables":
         crop_advice = (
             "For vegetables, maintain balanced nutrient management, "
             "add organic matter when needed, and maintain proper irrigation and drainage."
         )
-
     else:
-        crop_advice = (
-            f"General soil management recommendations are provided for {crop}."
-        )
+        crop_advice = f"General soil management recommendations are provided for {crop}."
 
     st.write(f"**Crop-Specific Recommendation:** {crop_advice}")
-    
 
     st.subheader("📋 Entered Soil Information")
 
@@ -368,9 +356,8 @@ st.write(f"**EC Recommendation:** {ec_advice}")
     st.write(f"**EC:** {ec} dS/m")
     st.write(f"**Soil Texture:** {soil_texture}")
     st.write(f"**Crop:** {crop}")
-    
+
     st.success(
         "Soil analysis completed successfully. "
         "Review the analysis and recommendations above."
     )
-    
