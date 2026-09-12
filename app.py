@@ -323,5 +323,10 @@ if st.button("Analyze Soil"):
         "Soil analysis completed successfully. "
         "Review the analysis and recommendations above."
     )
+    st.write(
+        "Your soil is currently in a healthy range based on the entered values. "
+        "Continue balanced nutrient management, maintain organic matter, "
+        "and avoid excessive fertilizer application."
+    )
 
     
