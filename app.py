@@ -95,6 +95,14 @@ if st.button("Analyze Soil"):
         nitrogen_result = "Your soil nitrogen level is high."
 
     st.write(f"**Nitrogen Analysis:** {nitrogen_result}")
+    if phosphorus < 15:
+        phosphorus_result = "Your soil phosphorus level is low."
+    elif phosphorus <= 30:
+        phosphorus_result = "Your soil phosphorus level is in a moderate range."
+    else:
+        phosphorus_result = "Your soil phosphorus level is high."
+
+    st.write(f"**Phosphorus Analysis:** {phosphorus_result}")
 
     st.subheader("🌱 Soil Information")
 
