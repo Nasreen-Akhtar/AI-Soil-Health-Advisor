@@ -105,7 +105,7 @@ st.write(
     "and avoid excessive fertilizer application."
 )
 
-    st.metric("Soil Health Score", f"{final_score}/100")
+st.metric("Soil Health Score", f"{final_score}/100")
     if final_score >= 80:
         st.success("🌱 Excellent soil health")
     elif final_score >= 60:
