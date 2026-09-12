@@ -99,6 +99,14 @@ if st.button("Analyze Soil"):
     final_score = round((score / 90) * 100)
 
     st.metric("Soil Health Score", f"{final_score}/100")
+    if final_score >= 80:
+        st.success("🌱 Excellent soil health")
+    elif final_score >= 60:
+        st.info("🌿 Good soil health")
+    elif final_score >= 40:
+        st.warning("⚠️ Soil health needs improvement")
+    else:
+        st.error("🔴 Soil health needs attention")
     st.write(f"**pH Analysis:** {ph_result}")
     if ph < 6.0:
        st.warning("⚠️ Soil pH is acidic.")
