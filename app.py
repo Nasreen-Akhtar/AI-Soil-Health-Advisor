@@ -125,6 +125,10 @@ if st.button("Analyze Soil"):
         crop_result = f"{soil_texture} soil selected for {crop}. Crop-specific recommendations will be added."
 
     st.write(f"**Crop & Soil Analysis:** {crop_result}")
+    st.subheader("🌱 Soil Health Recommendations")
+
+if nitrogen < 20:
+    nitrogen_advice = ...
     if nitrogen < 20:
         nitrogen_advice = "Consider improving nitrogen availability through appropriate nitrogen management."
     elif nitrogen <= 40:
@@ -173,7 +177,7 @@ if st.button("Analyze Soil"):
         ph_advice = "Soil is alkaline. Consider appropriate management practices based on a soil test and crop requirements."
 
     st.write(f"**pH Recommendation:** {ph_advice}")
-    st.subheader("🌱 Soil Health Recommendations")
+    
 
     st.subheader("🌱 Soil Information")
 
