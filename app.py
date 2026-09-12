@@ -214,12 +214,30 @@ if st.button("Analyze Soil"):
        st.warning("🟡 Soil salinity needs monitoring.")
     else:
        st.error("🔴 Soil salinity is high.")
-    if soil_texture == "Loamy" and crop == "Rice":
+if crop == "Rice":
+    if soil_texture == "Loamy":
         crop_result = "Loamy soil is generally suitable for rice cultivation when water and nutrient management are appropriate."
+    elif soil_texture == "Clayey":
+        crop_result = "Clayey soil can support rice cultivation because it can retain water, but proper drainage and nutrient management are important."
+    elif soil_texture == "Sandy":
+        crop_result = "Sandy soil may have limited water-holding capacity for rice. Good irrigation and organic matter management are important."
     else:
-        crop_result = f"{soil_texture} soil selected for {crop}. Crop-specific recommendations will be added."
+        crop_result = f"{soil_texture} soil selected for rice. Monitor water retention, drainage, and nutrient availability."
 
-    st.write(f"**Crop & Soil Analysis:** {crop_result}")
+elif crop == "Wheat":
+    if soil_texture == "Loamy":
+        crop_result = "Loamy soil is generally suitable for wheat because it provides a good balance of drainage, water retention, and nutrient availability."
+    elif soil_texture == "Sandy":
+        crop_result = "Sandy soil may require better water and nutrient management for wheat because of lower water-holding capacity."
+    elif soil_texture == "Clayey":
+        crop_result = "Clayey soil can support wheat, but good drainage and soil structure management are important."
+    else:
+        crop_result = f"{soil_texture} soil selected for wheat. Monitor soil moisture, drainage, and nutrient availability."
+
+else:
+    crop_result = f"{soil_texture} soil selected for {crop}. Consider soil moisture, drainage, organic matter, and nutrient management."
+
+st.write(f"**Crop & Soil Analysis:** {crop_result}")
 
     st.subheader("🌱 Soil Health Recommendations")
 
