@@ -261,22 +261,24 @@ elif phosphorus <= 30:
 else:
         phosphorus_advice = "Phosphorus is high. Avoid unnecessary phosphorus fertilizer application."
 
-    st.write(f"**Phosphorus Recommendation:** {phosphorus_advice}")
-    if phosphorus < 15:
-       st.warning("⚠️ Phosphorus may need attention.")
-    elif phosphorus <= 30:
-       st.success("🟢 Phosphorus management is currently balanced.")
-    else:
-       st.info("🔵 Phosphorus is high. Avoid unnecessary fertilizer application.")
-    if potassium < 100:
-        potassium_advice = "Potassium is low. Consider appropriate potassium management based on crop requirements."
-    elif potassium <= 200:
-        potassium_advice = "Potassium is in a moderate range. Maintain balanced potassium management and avoid unnecessary application."
-    else:
-        potassium_advice = "Potassium is high. Avoid unnecessary potassium fertilizer application."
+st.write(f"**Phosphorus Recommendation:** {phosphorus_advice}")
+if phosphorus < 15:
+    phosphorus_advice = "Phosphorus is low. Consider appropriate phosphorus management based on crop requirements."
+elif phosphorus <= 30:
+    phosphorus_advice = "Phosphorus is in a moderate range. Maintain balanced phosphorus management and avoid unnecessary application."
+else:
+    phosphorus_advice = "Phosphorus is high. Avoid unnecessary phosphorus fertilizer application."
 
-    st.write(f"**Potassium Recommendation:** {potassium_advice}")
-    if potassium < 100:
+st.write(f"**Phosphorus Recommendation:** {phosphorus_advice}")
+
+if phosphorus < 15:
+    st.warning("⚠️ Phosphorus may need attention.")
+elif phosphorus <= 30:
+    st.success("🟢 Phosphorus management is currently balanced.")
+else:
+    st.info("🔵 Phosphorus is high. Avoid unnecessary fertilizer application.")
+
+if potassium < 100:
        st.warning("⚠️ Potassium may need attention.")
     elif potassium <= 200:
        st.success("🟢 Potassium management is currently balanced.")
