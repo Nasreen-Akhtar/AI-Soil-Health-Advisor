@@ -137,6 +137,12 @@ if st.button("Analyze Soil"):
         ec_result = "Your soil has high salinity."
 
     st.write(f"**EC Analysis:** {ec_result}")
+    if ec < 2.0:
+       st.success("🟢 Soil salinity is low.")
+    elif ec <= 4.0:
+       st.warning("🟡 Soil salinity needs monitoring.")
+    else:
+       st.error("🔴 Soil salinity is high.")
     if soil_texture == "Loamy" and crop == "Rice":
         crop_result = "Loamy soil is generally suitable for rice cultivation when water and nutrient management are appropriate."
     else:
