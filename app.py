@@ -149,6 +149,14 @@ if st.button("Analyze Soil"):
         potassium_advice = "Potassium is high. Avoid unnecessary potassium fertilizer application."
 
     st.write(f"**Potassium Recommendation:** {potassium_advice}")
+    if ec < 2.0:
+        ec_advice = "Soil salinity is currently low. Maintain proper irrigation and drainage to prevent salt accumulation."
+    elif ec <= 4.0:
+        ec_advice = "Soil has moderate salinity. Monitor salinity and maintain good irrigation and drainage."
+    else:
+        ec_advice = "Soil salinity is high. Consider improving drainage and managing salt accumulation before planting."
+    
+    st.write(f"**EC Recommendation:** {ec_advice}")
 
     st.subheader("🌱 Soil Information")
 
