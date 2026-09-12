@@ -284,7 +284,7 @@ elif potassium <= 200:
     st.success("🟢 Potassium management is currently balanced.")
 else:
     st.info("🔵 Potassium is high. Avoid unnecessary fertilizer application.")
-   if ec < 2.0:
+  if ec < 2.0:
     ec_advice = "Soil salinity is currently low. Maintain proper irrigation and drainage to prevent salt accumulation."
 elif ec <= 4.0:
     ec_advice = "Soil has moderate salinity. Monitor salinity and maintain good irrigation and drainage."
