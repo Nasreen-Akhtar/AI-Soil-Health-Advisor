@@ -133,6 +133,14 @@ if st.button("Analyze Soil"):
         nitrogen_advice = "Nitrogen is high. Avoid unnecessary nitrogen fertilizer application."
     
     st.write(f"**Nitrogen Recommendation:** {nitrogen_advice}")
+    if phosphorus < 15:
+        phosphorus_advice = "Phosphorus is low. Consider appropriate phosphorus management based on crop requirements."
+    elif phosphorus <= 30:
+        phosphorus_advice = "Phosphorus is in a moderate range. Maintain balanced phosphorus management and avoid unnecessary application."
+    else:
+        phosphorus_advice = "Phosphorus is high. Avoid unnecessary phosphorus fertilizer application."
+
+    st.write(f"**Phosphorus Recommendation:** {phosphorus_advice}")
 
     st.subheader("🌱 Soil Information")
 
