@@ -176,7 +176,7 @@ if st.button("Analyze Soil"):
         ph_advice = "Soil is alkaline. Consider appropriate management practices based on a soil test and crop requirements."
 
     st.write(f"**pH Recommendation:** {ph_advice}")
-        if crop == "Rice":
+    if crop == "Rice":
         crop_advice = (
             "For rice, maintain balanced nutrient management, "
             "avoid excessive nitrogen application, and maintain proper water and drainage management."
