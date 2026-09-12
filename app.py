@@ -141,6 +141,14 @@ if st.button("Analyze Soil"):
         phosphorus_advice = "Phosphorus is high. Avoid unnecessary phosphorus fertilizer application."
 
     st.write(f"**Phosphorus Recommendation:** {phosphorus_advice}")
+    if potassium < 100:
+        potassium_advice = "Potassium is low. Consider appropriate potassium management based on crop requirements."
+    elif potassium <= 200:
+        potassium_advice = "Potassium is in a moderate range. Maintain balanced potassium management and avoid unnecessary application."
+    else:
+        potassium_advice = "Potassium is high. Avoid unnecessary potassium fertilizer application."
+
+    st.write(f"**Potassium Recommendation:** {potassium_advice}")
 
     st.subheader("🌱 Soil Information")
 
