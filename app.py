@@ -75,6 +75,17 @@ if st.button("Analyze Soil"):
         score += 15
     if 2.0 <= organic_matter <= 4.0:
         score += 15
+    if 20 <= nitrogen <= 40:
+        score += 15
+
+    if 15 <= phosphorus <= 30:
+        score += 15
+
+    if 100 <= potassium <= 200:
+        score += 15
+
+    if ec < 2.0:
+        score += 15
     
     if ph < 6.0:
         ph_result = "Your soil is acidic."
