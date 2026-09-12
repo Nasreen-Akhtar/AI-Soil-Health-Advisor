@@ -86,7 +86,7 @@ if st.button("Analyze Soil"):
         organic_result = "Your soil organic matter is in a reasonable range."
     else:
         organic_result = "Your soil has high organic matter."
-            st.write(f"**Organic Matter Analysis:** {organic_result}")
+    st.write(f"**Organic Matter Analysis:** {organic_result}")
 
     st.subheader("🌱 Soil Information")
 
