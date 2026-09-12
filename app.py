@@ -96,8 +96,8 @@ if st.button("Analyze Soil"):
 
     st.write(f"**Nitrogen Analysis:** {nitrogen_result}")
     if nitrogen < 20:
-    st.warning("⚠️ Nitrogen needs attention.")
-      elif nitrogen <= 40:
+       st.warning("⚠️ Nitrogen needs attention.")
+    elif nitrogen <= 40:
        st.success("🟢 Nitrogen level is moderate.")
     else:
        st.info("🔵 Nitrogen level is high.")
