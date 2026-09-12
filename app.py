@@ -240,7 +240,6 @@ else:
 st.write(f"**Crop & Soil Analysis:** {crop_result}")
 
 st.subheader("🌱 Soil Health Recommendations")
-
     if nitrogen < 20:
         nitrogen_advice = "Consider improving nitrogen availability through appropriate nitrogen management."
     elif nitrogen <= 40:
