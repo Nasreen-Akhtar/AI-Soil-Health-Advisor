@@ -70,6 +70,7 @@ crop = st.selectbox(
 )
 
 if st.button("Analyze Soil"):
+        score = 0
     
     if ph < 6.0:
         ph_result = "Your soil is acidic."
