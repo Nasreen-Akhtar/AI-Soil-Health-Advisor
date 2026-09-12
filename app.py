@@ -101,11 +101,25 @@ if st.button("Analyze Soil"):
     
     st.subheader("💡 Overall Assessment")
     
-    st.write(
-    "Your soil is currently in a healthy range based on the entered values. "
-    "Continue balanced nutrient management, maintain organic matter, "
-    "and avoid excessive fertilizer application."
-)
+        if final_score >= 80:
+        summary = (
+            "Based on the entered values, the soil shows generally favorable "
+            "conditions. Continue balanced nutrient management, maintain organic "
+            "matter, and avoid excessive fertilizer application."
+        )
+    elif final_score >= 60:
+        summary = (
+            "Based on the entered values, the soil shows generally acceptable "
+            "conditions, but some areas may need attention. Focus on balanced "
+            "nutrient management and regular soil monitoring."
+        )
+    else:
+        summary = (
+            "Based on the entered values, some soil properties may need attention. "
+            "Consider targeted soil management and follow-up soil testing."
+        )
+
+    st.write(summary)
 
     if final_score >= 80:
         st.success("🌱 Excellent soil health")
