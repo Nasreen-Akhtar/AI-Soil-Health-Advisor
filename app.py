@@ -97,9 +97,9 @@ if st.button("Analyze Soil"):
     st.write(f"**Nitrogen Analysis:** {nitrogen_result}")
     if nitrogen < 20:
     st.warning("⚠️ Nitrogen needs attention.")
-elif nitrogen <= 40:
+    elif nitrogen <= 40:
     st.success("🟢 Nitrogen level is moderate.")
-else:
+    else:
     st.info("🔵 Nitrogen level is high.")
     if phosphorus < 15:
         phosphorus_result = "Your soil phosphorus level is low."
