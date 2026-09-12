@@ -247,18 +247,18 @@ elif nitrogen <= 40:
 else:
         nitrogen_advice = "Nitrogen is high. Avoid unnecessary nitrogen fertilizer application."
 
-    st.write(f"**Nitrogen Recommendation:** {nitrogen_advice}")
-    if nitrogen < 20:
+st.write(f"**Nitrogen Recommendation:** {nitrogen_advice}")
+if nitrogen < 20:
        st.warning("⚠️ Nitrogen may need attention.")
-    elif nitrogen <= 40:
+elif nitrogen <= 40:
        st.success("🟢 Nitrogen management is currently balanced.")
-    else:
+else:
        st.info("🔵 Nitrogen is high. Avoid unnecessary fertilizer application.")
-    if phosphorus < 15:
+if phosphorus < 15:
         phosphorus_advice = "Phosphorus is low. Consider appropriate phosphorus management based on crop requirements."
-    elif phosphorus <= 30:
+elif phosphorus <= 30:
         phosphorus_advice = "Phosphorus is in a moderate range. Maintain balanced phosphorus management and avoid unnecessary application."
-    else:
+else:
         phosphorus_advice = "Phosphorus is high. Avoid unnecessary phosphorus fertilizer application."
 
     st.write(f"**Phosphorus Recommendation:** {phosphorus_advice}")
