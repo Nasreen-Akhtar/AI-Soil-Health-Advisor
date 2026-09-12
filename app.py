@@ -87,7 +87,7 @@ if st.button("Analyze Soil"):
     else:
         organic_result = "Your soil has high organic matter."
     st.write(f"**Organic Matter Analysis:** {organic_result}")
-        if nitrogen < 20:
+    if nitrogen < 20:
         nitrogen_result = "Your soil nitrogen level is low."
     elif nitrogen <= 40:
         nitrogen_result = "Your soil nitrogen level is in a moderate range."
