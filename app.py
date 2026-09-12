@@ -96,7 +96,7 @@ if st.button("Analyze Soil"):
 
     st.subheader("🔬 Soil Analysis")
     st.subheader("🌱 Overall Soil Health Score")
-        final_score = round((score / 90) * 100)
+    final_score = round((score / 90) * 100)
 
     st.metric("Soil Health Score", f"{final_score}/100")
     st.write(f"**pH Analysis:** {ph_result}")
