@@ -165,6 +165,14 @@ if st.button("Analyze Soil"):
         organic_advice = "Organic matter is high. Continue practices that maintain soil organic matter."
 
     st.write(f"**Organic Matter Recommendation:** {organic_advice}")
+    if ph < 6.0:
+        ph_advice = "Soil is acidic. Consider appropriate soil amendments based on a soil test and crop requirements."
+    elif ph <= 7.5:
+        ph_advice = "Soil pH is in a suitable range. Maintain balanced nutrient and soil management practices."
+    else:
+        ph_advice = "Soil is alkaline. Consider appropriate management practices based on a soil test and crop requirements."
+
+    st.write(f"**pH Recommendation:** {ph_advice}")
 
     st.subheader("🌱 Soil Information")
 
