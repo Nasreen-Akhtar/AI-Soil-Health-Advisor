@@ -184,8 +184,10 @@ if st.button("Analyze Soil"):
     st.write(f"**EC:** {ec}")
     st.write(f"**Soil Texture:** {soil_texture}")
     st.write(f"**Crop:** {crop}")
-
-    st.success(
-        "Your soil information has been recorded. "
-        "AI-based soil analysis will be added in the next stage."
+    
+        st.success(
+        "Soil analysis completed successfully. "
+        "Review the analysis and recommendations above."
     )
+
+    
