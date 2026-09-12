@@ -186,6 +186,12 @@ if st.button("Analyze Soil"):
         phosphorus_advice = "Phosphorus is high. Avoid unnecessary phosphorus fertilizer application."
 
     st.write(f"**Phosphorus Recommendation:** {phosphorus_advice}")
+    if phosphorus < 15:
+       st.warning("⚠️ Phosphorus may need attention.")
+    elif phosphorus <= 30:
+       st.success("🟢 Phosphorus management is currently balanced.")
+    else:
+       st.info("🔵 Phosphorus is high. Avoid unnecessary fertilizer application.")
     if potassium < 100:
         potassium_advice = "Potassium is low. Consider appropriate potassium management based on crop requirements."
     elif potassium <= 200:
@@ -194,6 +200,12 @@ if st.button("Analyze Soil"):
         potassium_advice = "Potassium is high. Avoid unnecessary potassium fertilizer application."
 
     st.write(f"**Potassium Recommendation:** {potassium_advice}")
+    if potassium < 100:
+       st.warning("⚠️ Potassium may need attention.")
+    elif potassium <= 200:
+       st.success("🟢 Potassium management is currently balanced.")
+    else:
+       st.info("🔵 Potassium is high. Avoid unnecessary fertilizer application.")
     if ec < 2.0:
         ec_advice = "Soil salinity is currently low. Maintain proper irrigation and drainage to prevent salt accumulation."
     elif ec <= 4.0:
@@ -202,6 +214,12 @@ if st.button("Analyze Soil"):
         ec_advice = "Soil salinity is high. Consider improving drainage and managing salt accumulation before planting."
     
     st.write(f"**EC Recommendation:** {ec_advice}")
+    if ec < 2.0:
+       st.success("🟢 Salinity management is currently good.")
+    elif ec <= 4.0:
+       st.warning("🟡 Salinity needs monitoring.")
+    else:
+       st.error("🔴 Salinity needs immediate attention.")
     if organic_matter < 2.0:
         organic_advice = "Organic matter is low. Consider adding well-decomposed organic material such as compost to improve soil health."
     elif organic_matter <= 4.0:
@@ -210,6 +228,12 @@ if st.button("Analyze Soil"):
         organic_advice = "Organic matter is high. Continue practices that maintain soil organic matter."
 
     st.write(f"**Organic Matter Recommendation:** {organic_advice}")
+    if organic_matter < 2.0:
+       st.warning("⚠️ Organic matter may need improvement.")
+    elif organic_matter <= 4.0:
+       st.success("🟢 Organic matter management is currently good.")
+    else:
+       st.info("🔵 Organic matter is high.")
     if ph < 6.0:
         ph_advice = "Soil is acidic. Consider appropriate soil amendments based on a soil test and crop requirements."
     elif ph <= 7.5:
@@ -218,6 +242,12 @@ if st.button("Analyze Soil"):
         ph_advice = "Soil is alkaline. Consider appropriate management practices based on a soil test and crop requirements."
 
     st.write(f"**pH Recommendation:** {ph_advice}")
+    if ph < 6.0:
+       st.warning("⚠️ Soil pH may need correction.")
+    elif ph <= 7.5:
+       st.success("🟢 Soil pH management is currently suitable.")
+    else:
+       st.warning("⚠️ Soil pH may need correction.")
     if crop == "Rice":
         crop_advice = (
             "For rice, maintain balanced nutrient management, "
