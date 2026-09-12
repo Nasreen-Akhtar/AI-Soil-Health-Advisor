@@ -103,6 +103,14 @@ if st.button("Analyze Soil"):
         phosphorus_result = "Your soil phosphorus level is high."
 
     st.write(f"**Phosphorus Analysis:** {phosphorus_result}")
+    if potassium < 100:
+        potassium_result = "Your soil potassium level is low."
+    elif potassium <= 200:
+        potassium_result = "Your soil potassium level is in a moderate range."
+    else:
+        potassium_result = "Your soil potassium level is high."
+
+    st.write(f"**Potassium Analysis:** {potassium_result}")
 
     st.subheader("🌱 Soil Information")
 
