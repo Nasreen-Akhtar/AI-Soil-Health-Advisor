@@ -101,7 +101,7 @@ if st.button("Analyze Soil"):
     
     st.subheader("💡 Overall Assessment")
     
-        if final_score >= 80:
+    if final_score >= 80:
         summary = (
             "Based on the entered values, the soil shows generally favorable "
             "conditions. Continue balanced nutrient management, maintain organic "
