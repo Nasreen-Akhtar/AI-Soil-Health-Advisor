@@ -71,7 +71,7 @@ crop = st.selectbox(
 
 if st.button("Analyze Soil"):
     
-        if ph < 6.0:
+    if ph < 6.0:
         ph_result = "Your soil is acidic."
     elif ph <= 7.5:
         ph_result = "Your soil pH is in a suitable range for many crops."
