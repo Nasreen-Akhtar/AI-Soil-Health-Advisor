@@ -99,6 +99,7 @@ if st.button("Analyze Soil"):
     final_score = round((score / 90) * 100)
     st.metric("Soil Health Score", f"{final_score}/100")
     st.progress(final_score / 100)
+    st.caption("Score is based on the entered soil properties and the current rule-based assessment.")
     if final_score >= 80:
         st.success("🌱 Excellent soil health")
     elif final_score >= 60:
@@ -343,10 +344,10 @@ if st.button("Analyze Soil"):
 
     st.write(f"**pH:** {ph}")
     st.write(f"**Organic Matter:** {organic_matter}%")
-    st.write(f"**Nitrogen:** {nitrogen}")
-    st.write(f"**Phosphorus:** {phosphorus}")
-    st.write(f"**Potassium:** {potassium}")
-    st.write(f"**EC:** {ec}")
+    st.write(f"**Nitrogen:** {nitrogen} mg/kg")
+    st.write(f"**Phosphorus:** {phosphorus} mg/kg")
+    st.write(f"**Potassium:** {potassium} mg/kg")
+    st.write(f"**EC:** {ec} dS/m")
     st.write(f"**Soil Texture:** {soil_texture}")
     st.write(f"**Crop:** {crop}")
     
