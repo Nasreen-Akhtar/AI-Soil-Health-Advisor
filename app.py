@@ -173,6 +173,7 @@ if st.button("Analyze Soil"):
         ph_advice = "Soil is alkaline. Consider appropriate management practices based on a soil test and crop requirements."
 
     st.write(f"**pH Recommendation:** {ph_advice}")
+    st.subheader("🌱 Soil Health Recommendations")
 
     st.subheader("🌱 Soil Information")
 
