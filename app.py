@@ -244,7 +244,7 @@ if st.button("Analyze Soil"):
     else:
         ec_result = "Your soil has high salinity."
 
-       if crop == "Rice":
+    if crop == "Rice":
         if soil_texture == "Loamy":
             crop_result = "Loamy soil is generally suitable for rice cultivation when water and nutrient management are appropriate."
         elif soil_texture == "Clayey":
