@@ -320,6 +320,31 @@ if st.button("Analyze Soil"):
 
     st.write(f"**Soil Texture Recommendation:** {texture_advice}")
 
+        st.subheader("🌾 Recommended Action Plan")
+
+    if ph < 6.0:
+        st.write("1. 🧪 Address acidic soil conditions based on a soil test and crop requirements.")
+
+    if organic_matter < 2.0:
+        st.write("2. 🌱 Increase organic matter using well-decomposed compost or other suitable organic materials.")
+
+    if nitrogen < 20:
+        st.write("3. 🌿 Improve nitrogen availability through balanced, crop-appropriate nitrogen management.")
+
+    if phosphorus < 15:
+        st.write("4. 🌾 Address low phosphorus through appropriate phosphorus management based on crop requirements.")
+
+    if potassium < 100:
+        st.write("5. 🌱 Address low potassium through appropriate potassium management based on crop requirements.")
+
+    if ec > 4.0:
+        st.write("6. 💧 Improve drainage and irrigation management to reduce salt accumulation.")
+
+    if soil_texture == "Sandy":
+        st.write("7. 💦 Improve water and nutrient retention in sandy soil by maintaining organic matter and using efficient irrigation.")
+
+    if ph >= 6.0 and organic_matter >= 2.0 and nitrogen >= 20 and phosphorus >= 15 and potassium >= 100 and ec < 4.0:
+        st.success("🌱 Maintain current soil management practices and continue regular soil testing.")
     st.subheader("🌱 Soil Health Recommendations")
 
     if nitrogen < 20:
