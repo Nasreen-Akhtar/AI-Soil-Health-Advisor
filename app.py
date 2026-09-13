@@ -320,7 +320,7 @@ if st.button("Analyze Soil"):
 
     st.write(f"**Soil Texture Recommendation:** {texture_advice}")
 
-        st.subheader("🌾 Recommended Action Plan")
+    st.subheader("🌾 Recommended Action Plan")
 
     if ph < 6.0:
         st.write("1. 🧪 Address acidic soil conditions based on a soil test and crop requirements.")
