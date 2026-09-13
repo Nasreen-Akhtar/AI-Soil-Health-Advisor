@@ -268,6 +268,38 @@ if st.button("Analyze Soil"):
         crop_result = f"{soil_texture} soil selected for {crop}. Consider soil moisture, drainage, organic matter, and nutrient management."
 
     st.write(f"**Crop & Soil Analysis:** {crop_result}")
+        # Soil texture analysis
+    if soil_texture == "Sandy":
+        texture_advice = (
+            "Sandy soil has lower water and nutrient-holding capacity. "
+            "Consider adding organic matter, using efficient irrigation, "
+            "and applying nutrients in smaller split doses."
+        )
+    elif soil_texture == "Clayey":
+        texture_advice = (
+            "Clayey soil can have drainage and compaction problems. "
+            "Maintain good drainage, avoid working the soil when it is too wet, "
+            "and add organic matter to improve soil structure."
+        )
+    elif soil_texture == "Silty":
+        texture_advice = (
+            "Silty soil can be prone to erosion and compaction. "
+            "Maintain soil cover, add organic matter, and use careful irrigation "
+            "to protect soil structure."
+        )
+    elif soil_texture == "Loamy":
+        texture_advice = (
+            "Loamy soil generally provides a good balance of water retention, "
+            "drainage, and nutrient availability. Maintain organic matter and "
+            "balanced nutrient management."
+        )
+    else:
+        texture_advice = (
+            "Soil texture was not specified. Consider a soil texture test "
+            "for more accurate water and nutrient management recommendations."
+        )
+
+    st.write(f"**Soil Texture Recommendation:** {texture_advice}")
 
     st.subheader("🌱 Soil Health Recommendations")
 
