@@ -222,8 +222,7 @@ if st.button("Analyze Soil"):
     else:
         potassium_advice = "Potassium is high. Avoid unnecessary potassium fertilizer application."
 
-    st.write(f"**Potassium Recommendation:** {potassium_advice}")
-
+    st.write(f"**Potassium Analysis:** {potassium_advice}")
     if potassium < 100:
         st.warning("⚠️ Potassium may need attention.")
     elif potassium <= 200:
