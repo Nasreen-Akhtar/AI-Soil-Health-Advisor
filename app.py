@@ -244,13 +244,13 @@ if st.button("Analyze Soil"):
     else:
         ec_result = "Your soil has high salinity."
 
-    if crop == "Rice":
+       if crop == "Rice":
         if soil_texture == "Loamy":
             crop_result = "Loamy soil is generally suitable for rice cultivation when water and nutrient management are appropriate."
         elif soil_texture == "Clayey":
-            crop_result = "Clayey soil can support rice cultivation because it can retain water, but proper drainage and nutrient management are important."
+            crop_result = "Clayey soil can support rice cultivation because it retains water well, but proper drainage and nutrient management are important."
         elif soil_texture == "Sandy":
-            crop_result = "Sandy soil may have limited water-holding capacity for rice. Good irrigation and organic matter management are important."
+            crop_result = "Sandy soil may have limited water-holding capacity for rice. Good irrigation, organic matter, and careful nutrient management are important."
         else:
             crop_result = f"{soil_texture} soil selected for rice. Monitor water retention, drainage, and nutrient availability."
 
@@ -264,9 +264,28 @@ if st.button("Analyze Soil"):
         else:
             crop_result = f"{soil_texture} soil selected for wheat. Monitor soil moisture, drainage, and nutrient availability."
 
+    elif crop == "Maize":
+        if soil_texture == "Loamy":
+            crop_result = "Loamy soil is generally favorable for maize because it provides good drainage, moisture retention, and nutrient availability."
+        elif soil_texture == "Sandy":
+            crop_result = "Sandy soil can support maize but may require frequent irrigation and careful nutrient management because of lower water and nutrient retention."
+        elif soil_texture == "Clayey":
+            crop_result = "Clayey soil can support maize, but good drainage and soil structure are important to prevent waterlogging and poor root development."
+        else:
+            crop_result = f"{soil_texture} soil selected for maize. Monitor soil moisture, drainage, and nutrient availability."
+
+    elif crop == "Vegetables":
+        if soil_texture == "Loamy":
+            crop_result = "Loamy soil is generally favorable for vegetables because it provides good drainage, moisture retention, and root development."
+        elif soil_texture == "Sandy":
+            crop_result = "Sandy soil may require frequent irrigation and organic matter additions to improve moisture and nutrient retention for vegetables."
+        elif soil_texture == "Clayey":
+            crop_result = "Clayey soil may require improved drainage and organic matter management to support healthy vegetable root development."
+        else:
+            crop_result = f"{soil_texture} soil selected for vegetables. Monitor drainage, moisture, organic matter, and nutrient availability."
+
     else:
         crop_result = f"{soil_texture} soil selected for {crop}. Consider soil moisture, drainage, organic matter, and nutrient management."
-
     st.write(f"**Crop & Soil Analysis:** {crop_result}")
         # Soil texture analysis
     if soil_texture == "Sandy":
