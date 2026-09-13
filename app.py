@@ -364,7 +364,7 @@ if st.button("Analyze Soil"):
         "Soil analysis completed successfully. "
         "Review the analysis and recommendations above."
     )
-        st.info(
+    st.info(
         "ℹ️ Note: This tool provides preliminary, rule-based soil health guidance. "
         "For field-level decisions, recommendations should be validated through "
         "laboratory soil testing and local agronomic expertise."
