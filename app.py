@@ -71,21 +71,54 @@ crop = st.selectbox(
 
 if st.button("Analyze Soil"):
     score = 0
+
+    # Soil pH — 20 points
     if 6.0 <= ph <= 7.5:
-        score += 15
+        score += 20
+    elif 5.5 <= ph < 6.0 or 7.5 < ph <= 8.0:
+        score += 12
+    else:
+        score += 5
+
+    # Organic Matter — 20 points
     if 2.0 <= organic_matter <= 4.0:
-        score += 15
+        score += 20
+    elif 1.5 <= organic_matter < 2.0:
+        score += 12
+    else:
+        score += 5
+
+    # Nitrogen — 15 points
     if 20 <= nitrogen <= 40:
         score += 15
+    elif 15 <= nitrogen < 20 or 40 < nitrogen <= 50:
+        score += 9
+    else:
+        score += 4
 
+    # Phosphorus — 15 points
     if 15 <= phosphorus <= 30:
         score += 15
+    elif 10 <= phosphorus < 15 or 30 < phosphorus <= 40:
+        score += 9
+    else:
+        score += 4
 
+    # Potassium — 15 points
     if 100 <= potassium <= 200:
         score += 15
+    elif 75 <= potassium < 100 or 200 < potassium <= 250:
+        score += 9
+    else:
+        score += 4
 
+    # EC / Salinity — 15 points
     if ec < 2.0:
         score += 15
+    elif ec <= 4.0:
+        score += 9
+    else:
+        score += 4
     
     if ph < 6.0:
         ph_result = "Your soil is acidic."
