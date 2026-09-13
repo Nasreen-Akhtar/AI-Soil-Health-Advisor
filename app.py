@@ -319,58 +319,33 @@ if st.button("Analyze Soil"):
         )
 
     st.write(f"**Soil Texture Recommendation:** {texture_advice}")
-
     st.subheader("🌾 Recommended Action Plan")
 
+    actions = []
+
     if ph < 6.0:
-        st.write("1. 🧪 Address acidic soil conditions based on a soil test and crop requirements.")
-
-    if organic_matter < 2.0:
-        st.write("2. 🌱 Increase organic matter using well-decomposed compost or other suitable organic materials.")
-
-    if nitrogen < 20:
-        st.write("3. 🌿 Improve nitrogen availability through balanced, crop-appropriate nitrogen management.")
-
-    if phosphorus < 15:
-        st.write("4. 🌾 Address low phosphorus through appropriate phosphorus management based on crop requirements.")
-
-    if potassium < 100:
-        st.write("5. 🌱 Address low potassium through appropriate potassium management based on crop requirements.")
+        actions.append("🧪 Address acidic soil conditions based on a soil test and crop requirements.")
 
     if ec > 4.0:
-        st.write("6. 💧 Improve drainage and irrigation management to reduce salt accumulation.")
+        actions.append("💧 Improve drainage and irrigation management to reduce salt accumulation.")
+
+    if organic_matter < 2.0:
+        actions.append("🌱 Increase organic matter using well-decomposed compost or suitable organic materials.")
+
+    if nitrogen < 20:
+        actions.append("🌿 Improve nitrogen availability through balanced, crop-appropriate nitrogen management.")
+
+    if phosphorus < 15 or potassium < 100:
+        actions.append("🌾 Address low phosphorus and/or potassium through crop-appropriate nutrient management.")
 
     if soil_texture == "Sandy":
-        st.write("7. 💦 Improve water and nutrient retention in sandy soil by maintaining organic matter and using efficient irrigation.")
+        actions.append("💦 Improve water and nutrient retention in sandy soil through organic matter and efficient irrigation.")
 
-    if ph >= 6.0 and organic_matter >= 2.0 and nitrogen >= 20 and phosphorus >= 15 and potassium >= 100 and ec < 4.0:
-        st.success("🌱 Maintain current soil management practices and continue regular soil testing.")
-   
-
-    if crop == "Rice":
-        crop_advice = (
-            "For rice, maintain balanced nutrient management, "
-            "avoid excessive nitrogen application, and maintain proper water and drainage management."
-        )
-    elif crop == "Wheat":
-        crop_advice = (
-            "For wheat, maintain balanced nitrogen and phosphorus management, "
-            "avoid excessive fertilizer application, and maintain good soil moisture."
-        )
-    elif crop == "Maize":
-        crop_advice = (
-            "For maize, maintain balanced nitrogen and potassium management, "
-            "support good soil moisture, and avoid excessive fertilizer application."
-        )
-    elif crop == "Vegetables":
-        crop_advice = (
-            "For vegetables, maintain balanced nutrient management, "
-            "add organic matter when needed, and maintain proper irrigation and drainage."
-        )
+    if actions:
+        for i, action in enumerate(actions[:5], start=1):
+            st.write(f"**{i}.** {action}")
     else:
-        crop_advice = f"General soil management recommendations are provided for {crop}."
-
-    st.write(f"**Crop-Specific Recommendation:** {crop_advice}")
+        st.success("🌱 Soil conditions are generally favorable. Continue balanced soil management and regular soil testing.")
 
     st.subheader("📋 Entered Soil Information")
 
