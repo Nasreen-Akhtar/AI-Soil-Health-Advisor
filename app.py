@@ -172,35 +172,30 @@ if st.button("Analyze Soil"):
        st.success("🟢 Nitrogen level is moderate.")
     else:
        st.info("🔵 Nitrogen level is high.")
+    
     if phosphorus < 15:
-        phosphorus_result = "Your soil phosphorus level is low."
+        st.warning("⚠️ Phosphorus needs attention.")
     elif phosphorus <= 30:
-        phosphorus_result = "Your soil phosphorus level is in a moderate range."
+        st.success("🟢 Phosphorus level is moderate.")
     else:
-        phosphorus_result = "Your soil phosphorus level is high."
+        st.info("🔵 Phosphorus level is high.")
 
-    st.write(f"**Phosphorus Analysis:** {phosphorus_result}")
-    if phosphorus < 15:
-       st.warning("⚠️ Phosphorus needs attention.")
-    elif phosphorus <= 30:
-       st.success("🟢 Phosphorus level is moderate.")
+    if potassium < 100:
+        potassium_advice = "Potassium is low. Consider appropriate potassium management based on crop requirements."
+    elif potassium <= 200:
+        potassium_advice = "Potassium is in a moderate range. Maintain balanced potassium management and avoid unnecessary application."
     else:
-       st.info("🔵 Phosphorus level is high.")
-if potassium < 100:
-    potassium_advice = "Potassium is low. Consider appropriate potassium management based on crop requirements."
-elif potassium <= 200:
-    potassium_advice = "Potassium is in a moderate range. Maintain balanced potassium management and avoid unnecessary application."
-else:
-    potassium_advice = "Potassium is high. Avoid unnecessary potassium fertilizer application."
+        potassium_advice = "Potassium is high. Avoid unnecessary potassium fertilizer application."
 
-st.write(f"**Potassium Recommendation:** {potassium_advice}")
+    st.write(f"**Potassium Recommendation:** {potassium_advice}")
 
-if potassium < 100:
-    st.warning("⚠️ Potassium may need attention.")
-elif potassium <= 200:
-    st.success("🟢 Potassium management is currently balanced.")
-else:
-    st.info("🔵 Potassium is high. Avoid unnecessary fertilizer application.")
+    if potassium < 100:
+        st.warning("⚠️ Potassium may need attention.")
+    elif potassium <= 200:
+        st.success("🟢 Potassium management is currently balanced.")
+    else:
+        st.info("🔵 Potassium is high. Avoid unnecessary fertilizer application.")
+
     if ec < 2.0:
         ec_result = "Your soil has low salinity."
     elif ec <= 4.0:
