@@ -164,12 +164,6 @@ if st.button("Analyze Soil"):
 
     st.write(summary)
 
-    if final_score >= 80:
-        st.success("🌱 Excellent soil health")
-    elif final_score >= 60:
-        st.info("🌿 Good soil health")
-    elif final_score >= 40:
-        st.warning("⚠️ Soil health needs improvement")
         
     st.write(f"**pH Analysis:** {ph_result}")
     if ph < 6.0:
