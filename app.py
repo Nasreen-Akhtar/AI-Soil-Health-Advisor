@@ -1,4 +1,6 @@
 import streamlit as st
+import joblib
+model = joblib.load("soil_health_model.pkl")
 
 st.set_page_config(
     page_title="AI Soil Health Advisor",
@@ -68,7 +70,36 @@ crop = st.selectbox(
     "Crop (Optional)",
     ["Not specified", "Rice", "Wheat", "Maize", "Vegetables", "Other"]
 )
+organic_carbon = organic_matter
 
+ml_input = [[
+    nitrogen,
+    phosphorus,
+    potassium,
+    ph,
+    ec,
+    organic_carbon
+]]
+
+ml_prediction = model.predict(ml_input)[0]
+st.subheader("🤖 ML-Based Fertility Insight")
+
+fertility_labels = {
+    0: "Less Fertile",
+    1: "Fertile",
+    2: "Highly Fertile"
+}
+
+st.info(
+    f"Dataset-based ML model indicates: "
+    f"**{fertility_labels[ml_prediction]}**"
+)
+
+st.caption(
+    "This ML insight is based on patterns learned from the training dataset. "
+    "The overall soil health assessment and recommendations are generated "
+    "separately using rule-based soil criteria."
+)
 if st.button("Analyze Soil"):
     score = 0
 
